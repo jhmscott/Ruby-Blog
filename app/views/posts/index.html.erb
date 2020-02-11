@@ -1,7 +1,7 @@
 <h1> Blog Posts </h1>
 
-<h3> First Blog Post </h3>
-<p>
-  <%= @content %>
-</p>
+<% @posts.each do |post| %>
+  <h3<%= post.title %>></h3>
+  <p><%= post.body %></p>
+<% end %>
 

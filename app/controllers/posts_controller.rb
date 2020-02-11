@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   def index
-    @content = "This is sample text for a post";  
+    @posts = Post.all;  
   end
 
   def new
