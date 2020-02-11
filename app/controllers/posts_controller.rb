@@ -4,11 +4,16 @@ class PostsController < ApplicationController
   end
 
   def new
-
+    @post = Post.new;
   end
 
   def create
-
+    @post = Post.new(params[:post].permit(:title, :body, :category_id));
+    if @post.save
+      redirect_to posts_path, :notice => "Submitted"
+    else
+      render "new"
+    end
   end
 
   def update
